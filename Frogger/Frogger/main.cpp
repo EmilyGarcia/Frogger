@@ -33,7 +33,7 @@ int main(int, char const**)
     
     // Background
     sf::Texture background;
-    if (!background.loadFromFile(resourcePath() + "background.png")) {
+    if (!background.loadFromFile(resourcePath() + "background.jpg")) {
         return EXIT_FAILURE;
     }
     sf::Sprite sprite(background);
@@ -43,8 +43,7 @@ int main(int, char const**)
     if (!frog.loadFromFile(resourcePath() + "spritesheet.png")) {
         return EXIT_FAILURE;
     }
-    sf::IntRect rectSourceSprite(0, 0, 300, 400);
-    
+    sf::IntRect rectSourceSprite(0, 0, 75, 400);
     sf::Sprite frogger(frog, rectSourceSprite);
     
     // Create a graphical text to display
@@ -74,8 +73,15 @@ int main(int, char const**)
             // Close window: exit
             if (event.type == sf::Event::Closed) {
                 window.close();
-            }
+            }// end if
             
+            // Escape pressed: exit
+            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
+                window.close();
+            }// end if
+            
+            
+            // Movement
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
             {
                 sf::Vector2f pos = frogger.getPosition();
@@ -83,44 +89,89 @@ int main(int, char const**)
                 if (pos.x <= 0)
                 {
                     frogger.move(0,0);
-                }
+                }// end if
                 else
                 {
-                    if ()
-                        frogger.move(-35,0);
-                }
-            }
+                    if (rectSourceSprite.left != 225)
+                    {
+                        rectSourceSprite.left = 225;
+                        frogger.setTextureRect(rectSourceSprite);
+                    }// end if
+                    
+                    frogger.move(-35,0);
+                    
+                }// end else
+            }// end if
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
             {
-                frogger.move(35,0);
-            }
+                sf::Vector2f pos = frogger.getPosition();
+                
+                if (pos.x >= 800)
+                {
+                    frogger.move(0,0);
+                }// end if
+                else
+                {
+                    if (rectSourceSprite.left != 85)
+                    {
+                        rectSourceSprite.left = 85;
+                        frogger.setTextureRect(rectSourceSprite);
+                    }// end if
+                    
+                    frogger.move(35,0);
+                    
+                }// end else
+            }// end if
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
             {
-                frogger.move(0,-35);
-            }
+                sf::Vector2f pos = frogger.getPosition();
+                
+                if (pos.y <= 0)
+                {
+                    frogger.move(0,0);
+                }// end if
+                else
+                {
+                    if (rectSourceSprite.left != 0)
+                    {
+                        rectSourceSprite.left = 0;
+                        frogger.setTextureRect(rectSourceSprite);
+                    }// end if
+                    
+                    frogger.move(0,-35);
+                }
+            }// end if
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
             {
-                frogger.move(0,35);
-            }
+                sf::Vector2f pos = frogger.getPosition();
+                
+                if (pos.y >= 800)
+                {
+                    frogger.move(0,0);
+                }// end if
+                else
+                {
+                    if (rectSourceSprite.left != 139)
+                    {
+                        rectSourceSprite.left = 139;
+                        frogger.setTextureRect(rectSourceSprite);
+                    }// end if
+                    
+                    frogger.move(0,35);
             
-            
-            
-            
-            
-            // Escape pressed: exit
-            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
-                window.close();
-            }
-        }
+                }// end else
+            }// end if
+        }// end game loop
         
         // Clear screen
         window.clear();
         
         // Draw the sprite
-        window.draw(sprite);
+        //window.draw(background);
+        window.draw(frogger);
         
         // Draw the string
-        window.draw(text);
+        //window.draw(text);
         
         // Update the window
         window.display();

@@ -16,6 +16,7 @@
 		F7015FB91CC1BE62003F928F /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F7015FB61CC1BE62003F928F /* background.jpg */; };
 		F7015FBA1CC1BE62003F928F /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = F7015FB71CC1BE62003F928F /* background.png */; };
 		F7015FBB1CC1BE62003F928F /* spritesheet.png in Resources */ = {isa = PBXBuildFile; fileRef = F7015FB81CC1BE62003F928F /* spritesheet.png */; };
+		F7015FBD1CC1C766003F928F /* froggerTheme.ogg in Resources */ = {isa = PBXBuildFile; fileRef = F7015FBC1CC1C766003F928F /* froggerTheme.ogg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		F7015FB61CC1BE62003F928F /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../images/background.jpg; sourceTree = "<group>"; };
 		F7015FB71CC1BE62003F928F /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../../../images/background.png; sourceTree = "<group>"; };
 		F7015FB81CC1BE62003F928F /* spritesheet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spritesheet.png; path = ../../../images/spritesheet.png; sourceTree = "<group>"; };
+		F7015FBC1CC1C766003F928F /* froggerTheme.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; name = froggerTheme.ogg; path = ../../froggerTheme.ogg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		F7015FA81CC1BE04003F928F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F7015FBC1CC1C766003F928F /* froggerTheme.ogg */,
 				F7015FB61CC1BE62003F928F /* background.jpg */,
 				F7015FB71CC1BE62003F928F /* background.png */,
 				F7015FB81CC1BE62003F928F /* spritesheet.png */,
@@ -153,6 +156,7 @@
 			files = (
 				F7015FB01CC1BE05003F928F /* icon.png in Resources */,
 				F7015FBA1CC1BE62003F928F /* background.png in Resources */,
+				F7015FBD1CC1C766003F928F /* froggerTheme.ogg in Resources */,
 				F7015FB91CC1BE62003F928F /* background.jpg in Resources */,
 				F7015FAE1CC1BE05003F928F /* sansation.ttf in Resources */,
 				F7015FAC1CC1BE05003F928F /* nice_music.ogg in Resources */,

@@ -22,7 +22,7 @@
 int main(int, char const**)
 {
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
+    sf::RenderWindow window(sf::VideoMode(799, 700), "SFML window");
     
     // Set the Icon
     sf::Image icon;
@@ -36,14 +36,14 @@ int main(int, char const**)
     if (!background.loadFromFile(resourcePath() + "background.jpg")) {
         return EXIT_FAILURE;
     }
-    sf::Sprite sprite(background);
+    sf::Sprite froggerBackground(background);
     
     // Frogger
     sf::Texture frog;
     if (!frog.loadFromFile(resourcePath() + "spritesheet.png")) {
         return EXIT_FAILURE;
     }
-    sf::IntRect rectSourceSprite(0, 0, 75, 400);
+    sf::IntRect rectSourceSprite(0, 0, 75, 150);
     sf::Sprite frogger(frog, rectSourceSprite);
     
     // Create a graphical text to display
@@ -62,6 +62,9 @@ int main(int, char const**)
     
     // Play the music
     music.play();
+    
+    // Set Frogger Starting Point
+    frogger.setPosition(350, 530);
     
     // Start the game loop
     while (window.isOpen())
@@ -106,7 +109,7 @@ int main(int, char const**)
             {
                 sf::Vector2f pos = frogger.getPosition();
                 
-                if (pos.x >= 800)
+                if (pos.x >= 730)
                 {
                     frogger.move(0,0);
                 }// end if
@@ -126,7 +129,7 @@ int main(int, char const**)
             {
                 sf::Vector2f pos = frogger.getPosition();
                 
-                if (pos.y <= 0)
+                if (pos.y <= -30)
                 {
                     frogger.move(0,0);
                 }// end if
@@ -145,7 +148,7 @@ int main(int, char const**)
             {
                 sf::Vector2f pos = frogger.getPosition();
                 
-                if (pos.y >= 800)
+                if (pos.y >= 530)
                 {
                     frogger.move(0,0);
                 }// end if
@@ -167,7 +170,7 @@ int main(int, char const**)
         window.clear();
         
         // Draw the sprite
-        //window.draw(background);
+        window.draw(froggerBackground);
         window.draw(frogger);
         
         // Draw the string

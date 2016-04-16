@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		F7015FA41CC1BE04003F928F /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = F7015FA31CC1BE04003F928F /* ResourcePath.mm */; };
 		F7015FA71CC1BE04003F928F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F7015FA61CC1BE04003F928F /* main.cpp */; };
-		F7015FAA1CC1BE04003F928F /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F7015FA91CC1BE04003F928F /* cute_image.jpg */; };
-		F7015FAC1CC1BE05003F928F /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = F7015FAB1CC1BE05003F928F /* nice_music.ogg */; };
 		F7015FAE1CC1BE05003F928F /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7015FAD1CC1BE05003F928F /* sansation.ttf */; };
 		F7015FB01CC1BE05003F928F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F7015FAF1CC1BE05003F928F /* icon.png */; };
 		F7015FB91CC1BE62003F928F /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F7015FB61CC1BE62003F928F /* background.jpg */; };
@@ -25,8 +23,6 @@
 		F7015FA31CC1BE04003F928F /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
 		F7015FA51CC1BE04003F928F /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
 		F7015FA61CC1BE04003F928F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		F7015FA91CC1BE04003F928F /* cute_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cute_image.jpg; sourceTree = "<group>"; };
-		F7015FAB1CC1BE05003F928F /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
 		F7015FAD1CC1BE05003F928F /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
 		F7015FAF1CC1BE05003F928F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		F7015FB61CC1BE62003F928F /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = background.jpg; path = ../../../images/background.jpg; sourceTree = "<group>"; };
@@ -89,8 +85,6 @@
 				F7015FB61CC1BE62003F928F /* background.jpg */,
 				F7015FB71CC1BE62003F928F /* background.png */,
 				F7015FB81CC1BE62003F928F /* spritesheet.png */,
-				F7015FA91CC1BE04003F928F /* cute_image.jpg */,
-				F7015FAB1CC1BE05003F928F /* nice_music.ogg */,
 				F7015FAD1CC1BE05003F928F /* sansation.ttf */,
 				F7015FAF1CC1BE05003F928F /* icon.png */,
 			);
@@ -159,9 +153,7 @@
 				F7015FBD1CC1C766003F928F /* froggerTheme.ogg in Resources */,
 				F7015FB91CC1BE62003F928F /* background.jpg in Resources */,
 				F7015FAE1CC1BE05003F928F /* sansation.ttf in Resources */,
-				F7015FAC1CC1BE05003F928F /* nice_music.ogg in Resources */,
 				F7015FBB1CC1BE62003F928F /* spritesheet.png in Resources */,
-				F7015FAA1CC1BE04003F928F /* cute_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,6 @@
 #include <iostream>
 #include "cScreen.hpp"
-
+#include "ResourcePath.hpp"
 #include <SFML/Graphics.hpp>
 
 class screen_1 : public cScreen
@@ -11,7 +11,9 @@ private:
 	float posy;
 	//sf::RectangleShape Rectangle;
 	sf::Sprite frogger;
+    sf::Sprite background;
 	sf::Texture frog;
+    sf::Texture back;
 	sf::IntRect rectSourceSprite;
 
 	
@@ -34,13 +36,17 @@ screen_1::screen_1(void)
 	
 		
 	//sf::Texture frog;
-	frog.loadFromFile("spritesheet.png");
+	frog.loadFromFile(resourcePath() + "spritesheet.png");
 	rectSourceSprite.left = 0;
 	rectSourceSprite.top = 0;
 	rectSourceSprite.width = 75;
 	rectSourceSprite.height = 150;
 	frogger.setTexture(frog, true);
 	frogger.setTextureRect(rectSourceSprite);
+    
+    // Background
+    back.loadFromFile(resourcePath() + "background.jpg");
+    background.setTexture(back);
 
 	//(0, 0, 75, 150);
 	//sf::Sprite frogger(frog, rectSourceSprite);
@@ -52,6 +58,8 @@ int screen_1::Run(sf::RenderWindow &App)
 	sf::Event Event;
 	bool Running = true;
 
+    
+    
 	while (Running)
 	{
 		//Verifying events
@@ -185,6 +193,7 @@ int screen_1::Run(sf::RenderWindow &App)
 		//Clearing screen
 		App.clear(sf::Color(0, 0, 0, 0));
 		//Drawing
+        App.draw(background);
 		App.draw(frogger);
 		App.display();
 	}

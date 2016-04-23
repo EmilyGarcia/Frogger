@@ -1,6 +1,6 @@
 #include <iostream>
 #include "cScreen.hpp"
-
+#include "ResourcePath.hpp"
 #include <SFML/Graphics.hpp>
 // using inheritance to bring in variables and methods from the base class cScreen.
 class screen_0 : public cScreen
@@ -37,10 +37,10 @@ int screen_0::Run(sf::RenderWindow &App)
 	// IF FILES DO NOT OPEN CORRECTLY OR IF THE FILES ARE NOT FOUND WITHIN THE DIRECTORY THEN WE WILL
 	// AUTOMATICALLY EXIT THE GAME.
 
-    Texture.loadFromFile("background.jpg");
+    Texture.loadFromFile(resourcePath() + "background.jpg");
 	Sprite.setTexture(Texture);
 	Sprite.setColor(sf::Color(255, 255, 255, alpha));
-	if (!Font.loadFromFile("sansation.ttf"))
+	if (!Font.loadFromFile(resourcePath() + "sansation.ttf"))
 	{
 		std::cerr << "Error loading .ttf" << std::endl;
 		return (-1);

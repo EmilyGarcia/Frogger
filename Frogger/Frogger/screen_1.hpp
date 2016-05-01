@@ -2,6 +2,7 @@
 #include "cScreen.hpp"
 #include "ResourcePath.hpp"
 #include <SFML/Graphics.hpp>
+#include "player.h"
 
 class screen_1 : public cScreen
 {
@@ -9,13 +10,19 @@ private:
 	float movement_step;
 	float posx;
 	float posy;
-	//sf::RectangleShape Rectangle;
+    // Frog
 	sf::Sprite frogger;
+    sf::Texture frog;
+    sf::IntRect rectSourceSprite;
+    // Background
     sf::Sprite background;
-	sf::Texture frog;
     sf::Texture back;
-	sf::IntRect rectSourceSprite;
-
+    // Car
+    sf::Sprite car;
+    sf::Texture carText;
+    sf::IntRect carSourceSprite;
+    // Player
+    Player mainPlayer;
 	
 
 
@@ -27,14 +34,6 @@ public:
 
 screen_1::screen_1(void)
 {
-	movement_step = 5;
-	posx = 320;
-	posy = 240;
-	//Setting sprite
-	//Rectangle.setFillColor(sf::Color(255, 255, 255, 150));
-	//Rectangle.setSize({ 10.f, 10.f });
-	
-		
 	//sf::Texture frog;
 	frog.loadFromFile(resourcePath() + "spritesheet.png");
 	rectSourceSprite.left = 0;
@@ -43,14 +42,23 @@ screen_1::screen_1(void)
 	rectSourceSprite.height = 150;
 	frogger.setTexture(frog, true);
 	frogger.setTextureRect(rectSourceSprite);
-    
+    //frogger.setOrigin(sf::Vector2f(37, 75));
     // Background
     back.loadFromFile(resourcePath() + "background.jpg");
     background.setTexture(back);
-
-	//(0, 0, 75, 150);
-	//sf::Sprite frogger(frog, rectSourceSprite);
-
+    
+    // Player Info
+    mainPlayer.setNumLives(3);
+    mainPlayer.setIsHit(false);
+    
+    // Car
+    carText.loadFromFile(resourcePath() + "spritesheet.png");
+    carSourceSprite.left = 0;
+    carSourceSprite.top = 0;
+    carSourceSprite.width = 75;
+    carSourceSprite.height = 150;
+    car.setTexture(carText, true);
+    car.setTextureRect(carSourceSprite);
 }
 
 int screen_1::Run(sf::RenderWindow &App)
@@ -70,32 +78,9 @@ int screen_1::Run(sf::RenderWindow &App)
 			{
 				return (-1);
 			}
+            
 			//Key pressed
-				/*
-			if (Event.type == sf::Event::KeyPressed)
-			{
-				switch (Event.key.code)
-				{
-				case sf::Keyboard::Escape:
-					return (0);
-					break;
-				case sf::Keyboard::Up:
-					posy -= movement_step;
-					break;
-				case sf::Keyboard::Down:
-					posy += movement_step;
-					break;
-				case sf::Keyboard::Left:
-					posx -= movement_step;
-					break;
-				case sf::Keyboard::Right:
-					posx += movement_step;
-					break;
-				default:
-					break;
-				}
-			}*/
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && !(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down)))
 			{
 				sf::Vector2f pos = frogger.getPosition();
 
@@ -177,20 +162,7 @@ int screen_1::Run(sf::RenderWindow &App)
 		
 		}
 
-		/*
-		//Updating
-		if (posx>630)
-			posx = 630;
-		if (posx<0)
-			posx = 0;
-		if (posy>470)
-			posy = 470;
-		if (posy<0)
-			posy = 0;
-		frogger.setPosition({ posx, posy });
-		*/
-
-		//Clearing screen
+        //Clearing screen
 		App.clear(sf::Color(0, 0, 0, 0));
 		//Drawing
         App.draw(background);

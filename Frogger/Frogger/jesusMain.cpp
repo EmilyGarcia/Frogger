@@ -10,7 +10,7 @@ int main(int argc, char** argv)
 	int screen = 0;
 
 	//Window creation
-	sf::RenderWindow App(sf::VideoMode(640, 480, 32), "FROGGER DEMO");
+	sf::RenderWindow App(sf::VideoMode(900, 800, 50), "FROGGER DEMO");
 
 	//Mouse cursor no more visible
 	//App.setMouseCursorVisible(false);

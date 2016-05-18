@@ -1,35 +1,35 @@
 #pragma once
+//
+//  objects.h
+//  Frogger
+//
+//  Created by Kristine Laranjo on 4/16/16.
+//  Copyright � 2016 Kristine Laranjo. All rights reserved.
+//
+
 #ifndef OBJECT_H
 #define OBJECT_H
-#include "SFML/graphics.hpp"
-#include <string>
+#include <SFML/Graphics.hpp>
+#include "ResourcePath.hpp"
 using namespace std;
 
-class Object {
+class Object
+{
 protected:
-    sf::Sprite obj;
-	bool right;
-	bool left;
-	string spriteName;
-	int posX;
-	int posY;
-	double speed;
+    double posX, posY;
+    double speed;
+    
 public:
-	Object();
-    Object(sf::Sprite& obj, string objName, int posX, int posY, double speed, bool right, bool left);
-	// Mutators
-    void setRight(bool right);
-	void setLeft(bool left);
-	void setSpriteName(string spriteName);
-	void setPosX(int posX);
-	void setPosY(int posY);
-	void setSpeed(double speed);
-    // Accessors
-	bool getRight( bool right )const { return right; }
-	bool getLeft( bool left )const { return left; }
-	string getSpriteName( string spriteName ) const{ return spriteName; }
-    int getPosX( int posX )const { return posX; }
-	int getPosY( int posY )const { return posY; }
-	double getSpeed( double speed )const { return speed; }
+    Object(double posX, double posY, double speed);
+    void moveRight(sf::Sprite &obj);
+    void moveLeft(sf::Sprite &obj);
+    void setPosX(double posX);
+    void setPosY(double posY);
+    void setSpeed(double speed);
+    double getPosX() const { return posX; }
+    double getPosY() const { return posY; }
+    double getSpeed() const { return speed; }
+    // Get position for
 };
-#endif
+
+#endif /* object_h */
